@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cmangun/agentic-receipts/schemas/trace-event.schema.json",
+  "title": "Trace Event",
+  "description": "A single event in an ordered agent trace stream",
+  "type": "object",
+  "required": ["event_id", "event_type", "timestamp", "sequence"],
+  "properties": {
+    "event_id": { "type": "string", "format": "uuid" },
+    "event_type": { "type": "string", "enum": ["tool_call", "model_inference", "artifact_write", "approval", "policy_decision", "error"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "sequence": { "type": "integer", "minimum": 0 },
+    "parent_event_id": { "type": ["string", "null"], "format": "uuid" },
+    "payload": { "type": "object" },
+    "metadata": { "type": "object" }
+  }
+}

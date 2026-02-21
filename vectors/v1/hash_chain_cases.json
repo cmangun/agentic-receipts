@@ -1,0 +1,1 @@
+[{"description":"Genesis receipt","prev_hash":"genesis","event_canonical":"{\"event_type\":\"tool_call\",\"sequence\":0}","timestamp":"2025-01-15T10:00:00Z"},{"description":"Chained receipt","prev_hash":"sha256:1a2b3c...","event_canonical":"{\"event_type\":\"model_inference\",\"sequence\":1}","timestamp":"2025-01-15T10:00:01Z"}]

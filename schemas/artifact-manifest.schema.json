@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cmangun/agentic-receipts/schemas/artifact-manifest.schema.json",
+  "title": "Artifact Manifest",
+  "description": "Manifest linking agent-produced artifacts to trace events",
+  "type": "object",
+  "required": ["manifest_id", "bundle_id", "artifacts"],
+  "properties": {
+    "manifest_id": { "type": "string", "format": "uuid" },
+    "bundle_id": { "type": "string", "format": "uuid" },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_id", "event_id", "hash", "path"],
+        "properties": {
+          "artifact_id": { "type": "string", "format": "uuid" },
+          "event_id": { "type": "string", "format": "uuid" },
+          "hash": { "type": "string" },
+          "path": { "type": "string" },
+          "content_type": { "type": "string" },
+          "size_bytes": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

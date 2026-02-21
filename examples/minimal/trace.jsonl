@@ -1,0 +1,4 @@
+{"event_id":"a1b2c3d4-0001-4000-8000-000000000001","event_type":"tool_call","timestamp":"2025-01-15T10:00:00Z","sequence":0,"payload":{"tool":"search","input":{"query":"metformin dosage guidelines"},"output":{"results":3}}}
+{"event_id":"a1b2c3d4-0001-4000-8000-000000000002","event_type":"policy_decision","timestamp":"2025-01-15T10:00:01Z","sequence":1,"payload":{"action":"search","decision":"allow","policy_hash":"sha256:abc123"}}
+{"event_id":"a1b2c3d4-0001-4000-8000-000000000003","event_type":"model_inference","timestamp":"2025-01-15T10:00:02Z","sequence":2,"payload":{"model":"gpt-4","tokens_in":150,"tokens_out":300}}
+{"event_id":"a1b2c3d4-0001-4000-8000-000000000004","event_type":"artifact_write","timestamp":"2025-01-15T10:00:03Z","sequence":3,"payload":{"artifact_id":"art-001","path":"report.md"}}

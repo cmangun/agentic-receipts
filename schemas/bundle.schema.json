@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cmangun/agentic-receipts/schemas/bundle.schema.json",
+  "title": "Agent Bundle Manifest",
+  "description": "Manifest for a portable agent execution bundle",
+  "type": "object",
+  "required": ["bundle_id", "version", "created_at", "trace_file", "receipts_file"],
+  "properties": {
+    "bundle_id": { "type": "string", "format": "uuid" },
+    "version": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "trace_file": { "type": "string" },
+    "receipts_file": { "type": "string" },
+    "artifacts_manifest": { "type": "string" },
+    "policy_version_hash": { "type": "string" },
+    "event_count": { "type": "integer", "minimum": 0 },
+    "metadata": { "type": "object" }
+  }
+}

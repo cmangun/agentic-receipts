@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cmangun/agentic-receipts/schemas/receipt.schema.json",
+  "title": "Agent Receipt",
+  "description": "Cryptographic attestation for a single agent trace event",
+  "type": "object",
+  "required": ["receipt_id", "event_id", "hash", "prev_hash", "timestamp"],
+  "properties": {
+    "receipt_id": { "type": "string", "format": "uuid" },
+    "event_id": { "type": "string", "format": "uuid" },
+    "hash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "prev_hash": { "type": "string", "pattern": "^(sha256:[a-f0-9]{64}|genesis)$" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "event_type": { "type": "string", "enum": ["tool_call", "model_inference", "artifact_write", "approval", "policy_decision", "error"] },
+    "signature": {
+      "type": "object",
+      "properties": {
+        "algorithm": { "type": "string", "enum": ["ed25519", "P-256"] },
+        "public_key": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    },
+    "metadata": { "type": "object" }
+  }
+}

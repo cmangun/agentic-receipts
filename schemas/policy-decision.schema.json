@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cmangun/agentic-receipts/schemas/policy-decision.schema.json",
+  "title": "Policy Decision",
+  "description": "Allow/deny receipt produced by a policy evaluation layer",
+  "type": "object",
+  "required": ["decision_id", "event_id", "action", "decision", "policy_hash"],
+  "properties": {
+    "decision_id": { "type": "string", "format": "uuid" },
+    "event_id": { "type": "string", "format": "uuid" },
+    "action": { "type": "string" },
+    "decision": { "type": "string", "enum": ["allow", "deny", "require_approval"] },
+    "policy_hash": { "type": "string" },
+    "reason": { "type": "string" },
+    "matched_rules": { "type": "array", "items": { "type": "string" } },
+    "timestamp": { "type": "string", "format": "date-time" }
+  }
+}

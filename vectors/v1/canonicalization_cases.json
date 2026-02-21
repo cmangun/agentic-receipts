@@ -1,0 +1,6 @@
+[
+  {"description":"Keys sorted lexicographically","input":{"zebra":1,"apple":2,"mango":3},"expected_canonical":"{\"apple\":2,\"mango\":3,\"zebra\":1}"},
+  {"description":"Nested objects sorted recursively","input":{"b":{"z":1,"a":2},"a":1},"expected_canonical":"{\"a\":1,\"b\":{\"a\":2,\"z\":1}}"},
+  {"description":"Null values included","input":{"a":null,"b":1},"expected_canonical":"{\"a\":null,\"b\":1}"},
+  {"description":"Array order preserved","input":{"items":[3,1,2]},"expected_canonical":"{\"items\":[3,1,2]}"}
+]
