@@ -41,6 +41,17 @@ Downstream projects should treat this repo as the canonical source of truth for:
 
 See: `spec/threat-model.md`
 
+## Framework alignment
+
+This spec implements the **receipts and trace semantics layer** of [ATVC — the Agentic Trust Validation Certification framework](https://enterprise-ai-playbook-demo.vercel.app/). Specifically:
+
+| ATVC Phase | Coverage |
+|---|---|
+| **Phase 02 — Architecture** (steps 26–50) | Receipt schema, canonicalization, hash-chain, signature envelope, redaction model |
+| **Phase 03 — Engineering** (steps 51–75) | Conformance test vectors, threat model, validation tooling |
+
+Conformance vectors in `vectors/v1/` are referenceable as ATVC validation artifacts for the Architecture phase-exit contract.
+
 ## Suite
 
 This repo is part of the **Agentic Evidence Suite**:
