@@ -1,5 +1,7 @@
 # agentic-receipts
 
+> Part of the [Agentic Evidence Suite](https://github.com/cmangun/agentic-evidence) — six interoperating components for verifiable agentic AI. See [`REFERENCE-ARCHITECTURE.md`](https://github.com/cmangun/agentic-evidence/blob/main/REFERENCE-ARCHITECTURE.md) for the suite-level architecture.
+
 Standard receipts and trace semantics for **verifiable agent execution**.
 
 This repo defines:
