@@ -2,15 +2,15 @@
 """
 Conformance vector runner.
 
-Walks `vectors/` recursively, validates that each `.json` file contains a
-parseable list of case objects with a `description` field, and reports
-pass/fail per file. Exits non-zero on any parse or structure failure.
+Walks `vectors/` recursively, validates that each `.json` file contains either
+a single case object (one-per-case format) or a list of case objects (legacy
+array format), each with at minimum a `description` field. Reports pass/fail
+per file and exits non-zero on any parse or structure failure.
 
-In v0.1 this validates structural integrity only. Actual case execution —
-run `input` through canonicalizer / hasher / signer / redactor and compare
-to `expected_*` — is a v0.1 expansion deliverable that lights up
-automatically as cases include input/expected pairs implementing the
-spec operations.
+In v0.1 this validates structural integrity. Actual case execution — run
+`input` through canonicalizer / hasher / signer / redactor and compare to
+`expected_*` — is a v0.1 expansion deliverable that lights up automatically
+as cases include input/expected pairs implementing the spec operations.
 """
 
 import json
@@ -38,12 +38,17 @@ def main() -> int:
             failures.append(f"{rel}: invalid JSON ({e})")
             continue
 
-        if not isinstance(data, list):
-            failures.append(f"{rel}: top-level must be a JSON array of cases")
+        # Accept either a single case object or an array of cases
+        if isinstance(data, dict):
+            cases = [data]
+        elif isinstance(data, list):
+            cases = data
+        else:
+            failures.append(f"{rel}: top-level must be a JSON object or array of cases")
             continue
 
         file_cases = 0
-        for i, case in enumerate(data):
+        for i, case in enumerate(cases):
             if not isinstance(case, dict):
                 failures.append(f"{rel}[{i}]: case must be an object")
                 continue
@@ -53,7 +58,7 @@ def main() -> int:
             file_cases += 1
             total_cases += 1
 
-        print(f"  ok  {rel}  ({file_cases} cases)")
+        print(f"  ok  {rel}  ({file_cases} case{'s' if file_cases != 1 else ''})")
 
     if failures:
         print(f"\nFAIL  {len(failures)} structural failures:")

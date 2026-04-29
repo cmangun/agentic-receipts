@@ -1,0 +1,9 @@
+{
+  "description": "Keys sorted lexicographically",
+  "input": {
+    "zebra": 1,
+    "apple": 2,
+    "mango": 3
+  },
+  "expected_canonical": "{\"apple\":2,\"mango\":3,\"zebra\":1}"
+}

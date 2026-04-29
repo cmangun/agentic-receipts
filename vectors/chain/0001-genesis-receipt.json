@@ -1,0 +1,6 @@
+{
+  "description": "Genesis receipt",
+  "prev_hash": "genesis",
+  "event_canonical": "{\"event_type\":\"tool_call\",\"sequence\":0}",
+  "timestamp": "2025-01-15T10:00:00Z"
+}

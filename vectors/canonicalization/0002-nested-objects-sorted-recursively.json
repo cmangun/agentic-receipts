@@ -1,0 +1,11 @@
+{
+  "description": "Nested objects sorted recursively",
+  "input": {
+    "b": {
+      "z": 1,
+      "a": 2
+    },
+    "a": 1
+  },
+  "expected_canonical": "{\"a\":1,\"b\":{\"a\":2,\"z\":1}}"
+}

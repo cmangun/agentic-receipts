@@ -1,0 +1,8 @@
+{
+  "description": "Null values included",
+  "input": {
+    "a": null,
+    "b": 1
+  },
+  "expected_canonical": "{\"a\":null,\"b\":1}"
+}

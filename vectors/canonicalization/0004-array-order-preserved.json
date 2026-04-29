@@ -1,0 +1,11 @@
+{
+  "description": "Array order preserved",
+  "input": {
+    "items": [
+      3,
+      1,
+      2
+    ]
+  },
+  "expected_canonical": "{\"items\":[3,1,2]}"
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Field redacted with hash preserved",
+  "original_field": "patient_name",
+  "redacted_marker": {
+    "redacted": true,
+    "original_hash": "sha256:...",
+    "reason": "PHI"
+  }
+}

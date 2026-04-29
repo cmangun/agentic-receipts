@@ -1,0 +1,5 @@
+{
+  "description": "Ed25519 signature over receipt hash",
+  "algorithm": "ed25519",
+  "note": "Sign the hash string bytes with private key, verify with public key"
+}
