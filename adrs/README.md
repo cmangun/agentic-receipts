@@ -8,7 +8,11 @@ ADRs are numbered sequentially and never deleted. Superseded ADRs remain in this
 
 | # | Title | Status |
 |---|---|---|
-| (none yet) | | |
+| 0001 | [Hash algorithm choice](0001-hash-algorithm.md) | Accepted |
+| 0002 | [Signature algorithm and post-quantum migration path](0002-signature-algorithm.md) | Accepted |
+| 0003 | [Hash chain versus Merkle tree for ordering proof](0003-hash-chain-vs-merkle.md) | Accepted |
+| 0004 | [JSON canonicalization rules](0004-json-canonicalization.md) | Accepted |
+| 0005 | [Redaction-with-integrity model](0005-redaction-with-integrity.md) | Accepted |
 
 ## Format
 
