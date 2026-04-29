@@ -1,0 +1,12 @@
+{
+  "description": "A bundle's root hash equals SHA-256 over the canonicalized concatenation of its receipts, providing a single-hash integrity anchor for the whole bundle per the bundle schema.",
+  "citation": "schemas/bundle.schema.json; spec/model.md (bundle integrity)",
+  "input_receipts_canonical": [
+    "{\"event_type\":\"tool_call\",\"sequence\":0}",
+    "{\"event_type\":\"model_inference\",\"sequence\":1}",
+    "{\"event_type\":\"artifact_write\",\"sequence\":2}"
+  ],
+  "expected_root_hash_input": "concat(receipts_canonical) then sha256",
+  "expected_outcome": "root_hash_matches",
+  "expected_failure_reason_if_mismatch": "bundle_root_hash_does_not_match_recomputed_chain_hash"
+}

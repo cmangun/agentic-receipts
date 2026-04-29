@@ -1,5 +1,6 @@
 {
-  "description": "Field redacted with hash preserved",
+  "description": "Redacting a field replaces its value with a salted-hash placeholder while leaving the receipt's overall integrity hash unchanged, so audit can verify a redaction without seeing the redacted value per ADR-0005.",
+  "citation": "adrs/0005-redaction-with-integrity.md §Decision (per-field salted-hash redaction)",
   "original_field": "patient_name",
   "redacted_marker": {
     "redacted": true,

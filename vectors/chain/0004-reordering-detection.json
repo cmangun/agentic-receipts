@@ -1,0 +1,16 @@
+{
+  "description": "Swapping the position of two chained receipts breaks the prev_hash linkage, proving the chain enforces total order beyond mere set-membership per ADR-0003.",
+  "citation": "adrs/0003-hash-chain-vs-merkle.md §Consequences (total-order enforcement)",
+  "original_sequence": [
+    {"sequence": 0, "prev_hash": "genesis"},
+    {"sequence": 1, "prev_hash": "sha256:<hash-of-0>"},
+    {"sequence": 2, "prev_hash": "sha256:<hash-of-1>"}
+  ],
+  "reordered_sequence": [
+    {"sequence": 0, "prev_hash": "genesis"},
+    {"sequence": 2, "prev_hash": "sha256:<hash-of-1>"},
+    {"sequence": 1, "prev_hash": "sha256:<hash-of-0>"}
+  ],
+  "expected_outcome": "verification_fails",
+  "expected_failure_reason": "prev_hash_does_not_match_predecessor"
+}

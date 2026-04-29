@@ -1,0 +1,26 @@
+{
+  "description": "Modifying any field of a signed redaction map invalidates its operator signature, preventing post-hoc redaction tampering per ADR-0005.",
+  "citation": "adrs/0005-redaction-with-integrity.md §Consequences (redaction-map signature integrity)",
+  "original_redaction_map": {
+    "redacted_fields": ["patient_name"],
+    "operator_identifying_token": "operator:alpha-team",
+    "redacted_at": "2025-01-15T10:05:00Z",
+    "signature": {
+      "algorithm": "ed25519",
+      "public_key": "<32-byte ed25519 public key, hex-encoded>",
+      "value": "<64-byte ed25519 signature, hex-encoded>"
+    }
+  },
+  "tampered_redaction_map": {
+    "redacted_fields": ["patient_name", "diagnosis_code"],
+    "operator_identifying_token": "operator:alpha-team",
+    "redacted_at": "2025-01-15T10:05:00Z",
+    "signature": {
+      "algorithm": "ed25519",
+      "public_key": "<32-byte ed25519 public key, hex-encoded>",
+      "value": "<original signature, unchanged>"
+    }
+  },
+  "expected_outcome": "verification_fails",
+  "expected_failure_reason": "redaction_map_signature_invalid_after_field_modification"
+}

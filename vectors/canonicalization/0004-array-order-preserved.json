@@ -1,5 +1,6 @@
 {
-  "description": "Array order preserved",
+  "description": "Array element order is preserved exactly, since arrays are positional and reordering would change receipt meaning per ADR-0004.",
+  "citation": "adrs/0004-json-canonicalization.md §Decision (array order preservation per JCS RFC 8785)",
   "input": {
     "items": [
       3,

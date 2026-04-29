@@ -1,0 +1,9 @@
+{
+  "description": "Modifying any field of a receipt invalidates its hash so the next receipt's prev_hash no longer matches, making downstream verification fail and proving tamper-evidence per ADR-0003.",
+  "citation": "adrs/0003-hash-chain-vs-merkle.md §Consequences (tamper-evidence via prev_hash linkage)",
+  "original_event_canonical": "{\"event_type\":\"tool_call\",\"sequence\":1}",
+  "tampered_event_canonical": "{\"event_type\":\"tool_call\",\"sequence\":99}",
+  "successor_prev_hash_was": "sha256:<hash-of-original>",
+  "expected_outcome": "verification_fails",
+  "expected_failure_reason": "prev_hash_mismatch"
+}

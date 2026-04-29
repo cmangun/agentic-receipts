@@ -1,5 +1,7 @@
 {
-  "description": "Ed25519 signature over receipt hash",
+  "description": "Ed25519 signature is computed over the canonical receipt hash rather than over raw JSON, decoupling signature from serialization noise per ADR-0002.",
+  "citation": "adrs/0002-signature-algorithm.md §Decision (Ed25519 over canonical hash)",
   "algorithm": "ed25519",
-  "note": "Sign the hash string bytes with private key, verify with public key"
+  "signed_input": "the SHA-256 hex digest string of the canonicalized receipt",
+  "note": "Sign the hash string bytes with private key, verify with public key."
 }

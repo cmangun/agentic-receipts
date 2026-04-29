@@ -1,0 +1,23 @@
+{
+  "description": "When a policy expects a context field and the field is omitted from the request, the engine denies rather than allowing or returning ambiguous, regression-locking deny-by-default semantics per agentic-policy-engine ADR-0001.",
+  "citation": "agentic-policy-engine/adrs/0001-deny-by-default.md §Decision (deny on missing context)",
+  "policy": {
+    "rule_id": "phi-egress-block",
+    "effect": "deny",
+    "when": {
+      "data_class": {"not": "PHI"}
+    }
+  },
+  "request_with_context": {
+    "action": "tool_call:network_egress",
+    "context": {"data_class": "public"}
+  },
+  "request_without_context": {
+    "action": "tool_call:network_egress",
+    "context": {}
+  },
+  "expected_decision_with_context": "allow",
+  "expected_decision_without_context": "deny",
+  "expected_decision_receipt_reason_without_context": "default_deny_missing_context_field:data_class",
+  "note": "This vector regression-locks the bug fixed during WP 3.1 where a 'not' condition incorrectly evaluated to allow when the inspected context field was None. Symmetric with the gt-operator None-guard."
+}

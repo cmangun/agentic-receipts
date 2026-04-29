@@ -1,0 +1,16 @@
+{
+  "description": "The redacted-fields array enumerates every redacted field path, making the set of redactions auditable without revealing the redacted values per ADR-0005.",
+  "citation": "adrs/0005-redaction-with-integrity.md §Decision (redacted-fields-array transparency)",
+  "input_pre_redaction": {
+    "patient_name": "Jane Doe",
+    "patient_dob": "1980-01-01",
+    "diagnosis_code": "Z00.00"
+  },
+  "input_post_redaction": {
+    "patient_name": {"redacted": true, "original_hash": "sha256:...", "reason": "PHI"},
+    "patient_dob": {"redacted": true, "original_hash": "sha256:...", "reason": "PHI"},
+    "diagnosis_code": "Z00.00"
+  },
+  "expected_redacted_fields": ["patient_name", "patient_dob"],
+  "expected_invariant": "redacted_fields array enumerates exactly the dotted paths whose values were replaced by redacted markers"
+}

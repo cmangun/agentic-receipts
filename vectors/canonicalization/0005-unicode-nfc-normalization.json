@@ -1,0 +1,12 @@
+{
+  "description": "NFC and NFD Unicode inputs of the same logical string canonicalize to byte-identical output, proving JCS RFC 8785 normalization rules per ADR-0004.",
+  "citation": "adrs/0004-json-canonicalization.md §Decision (Unicode NFC normalization per JCS RFC 8785)",
+  "input_nfc": {
+    "name": "café"
+  },
+  "input_nfd": {
+    "name": "café"
+  },
+  "expected_canonical": "{\"name\":\"café\"}",
+  "note": "Both NFC ('café' as U+00E9) and NFD ('cafe' + combining acute U+0301) MUST canonicalize to the same NFC byte sequence."
+}

@@ -1,0 +1,13 @@
+{
+  "description": "A receipt populating every required field validates against the v0.1 receipt schema, establishing the positive baseline for the schema contract.",
+  "citation": "schemas/receipt.schema.json (required: receipt_id, event_id, hash, prev_hash, timestamp)",
+  "input": {
+    "receipt_id": "11111111-1111-4111-8111-111111111111",
+    "event_id": "22222222-2222-4222-8222-222222222222",
+    "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "prev_hash": "genesis",
+    "timestamp": "2025-01-15T10:00:00Z"
+  },
+  "schema": "schemas/receipt.schema.json",
+  "expected_outcome": "validation_succeeds"
+}

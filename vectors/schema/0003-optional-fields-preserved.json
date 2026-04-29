@@ -1,0 +1,18 @@
+{
+  "description": "Optional fields, when present, round-trip through canonicalization and validation without being stripped, so receipt extensibility does not depend on schema mutation.",
+  "citation": "schemas/receipt.schema.json §properties (event_type, signature, metadata)",
+  "input": {
+    "receipt_id": "11111111-1111-4111-8111-111111111111",
+    "event_id": "22222222-2222-4222-8222-222222222222",
+    "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "prev_hash": "genesis",
+    "timestamp": "2025-01-15T10:00:00Z",
+    "event_type": "tool_call",
+    "metadata": {
+      "agent_id": "alpha"
+    }
+  },
+  "schema": "schemas/receipt.schema.json",
+  "expected_outcome": "validation_succeeds",
+  "expected_invariant": "canonicalize(input) preserves event_type and metadata fields verbatim"
+}

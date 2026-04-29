@@ -1,0 +1,15 @@
+{
+  "description": "Removing an intermediate receipt leaves a successor whose prev_hash matches no available predecessor, surfacing the gap rather than silently accepting a shorter chain per ADR-0003.",
+  "citation": "adrs/0003-hash-chain-vs-merkle.md §Consequences (gap detection via chain-walk)",
+  "complete_chain": [
+    {"sequence": 0, "prev_hash": "genesis"},
+    {"sequence": 1, "prev_hash": "sha256:<hash-of-0>"},
+    {"sequence": 2, "prev_hash": "sha256:<hash-of-1>"}
+  ],
+  "chain_with_gap": [
+    {"sequence": 0, "prev_hash": "genesis"},
+    {"sequence": 2, "prev_hash": "sha256:<hash-of-1>"}
+  ],
+  "expected_outcome": "verification_fails",
+  "expected_failure_reason": "missing_predecessor_for_prev_hash"
+}

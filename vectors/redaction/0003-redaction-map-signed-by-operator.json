@@ -1,0 +1,15 @@
+{
+  "description": "The redaction map carries an operator-identifying-token signature, binding the redaction event to a named operator so redactions are attributable per ADR-0005.",
+  "citation": "adrs/0005-redaction-with-integrity.md §Decision (operator-identifying-token signature)",
+  "redaction_map": {
+    "redacted_fields": ["patient_name", "patient_dob"],
+    "operator_identifying_token": "operator:alpha-team",
+    "redacted_at": "2025-01-15T10:05:00Z",
+    "signature": {
+      "algorithm": "ed25519",
+      "public_key": "<32-byte ed25519 public key, hex-encoded>",
+      "value": "<64-byte ed25519 signature, hex-encoded>"
+    }
+  },
+  "expected_invariant": "redaction map verifies under the operator-identifying-token's published key; verification proves the redaction was performed by the named operator, not an unknown party"
+}

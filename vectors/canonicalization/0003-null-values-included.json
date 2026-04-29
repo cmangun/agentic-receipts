@@ -1,5 +1,6 @@
 {
-  "description": "Null values included",
+  "description": "Null-valued fields are preserved in canonical output rather than elided, distinguishing null-presence from absence per ADR-0004.",
+  "citation": "adrs/0004-json-canonicalization.md §Decision (null preservation per JCS RFC 8785)",
   "input": {
     "a": null,
     "b": 1

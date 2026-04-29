@@ -1,0 +1,14 @@
+{
+  "description": "A receipt missing any required field is rejected by the schema validator, proving required fields are not optional in disguise.",
+  "citation": "schemas/receipt.schema.json §required",
+  "input": {
+    "receipt_id": "11111111-1111-4111-8111-111111111111",
+    "event_id": "22222222-2222-4222-8222-222222222222",
+    "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "timestamp": "2025-01-15T10:00:00Z"
+  },
+  "missing_field": "prev_hash",
+  "schema": "schemas/receipt.schema.json",
+  "expected_outcome": "validation_fails",
+  "expected_failure_reason": "required_property_missing:prev_hash"
+}

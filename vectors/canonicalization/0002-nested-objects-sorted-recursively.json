@@ -1,5 +1,6 @@
 {
-  "description": "Nested objects sorted recursively",
+  "description": "Nested objects sort their keys recursively at every depth, ensuring canonical form is deterministic at every level per ADR-0004.",
+  "citation": "adrs/0004-json-canonicalization.md §Decision (recursive key sorting per JCS RFC 8785)",
   "input": {
     "b": {
       "z": 1,

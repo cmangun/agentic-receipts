@@ -1,5 +1,6 @@
 {
-  "description": "Genesis receipt",
+  "description": "Genesis receipt uses the literal sentinel 'genesis' for prev_hash, anchoring the chain's start without ambiguity per ADR-0003.",
+  "citation": "adrs/0003-hash-chain-vs-merkle.md §Decision (chain genesis convention)",
   "prev_hash": "genesis",
   "event_canonical": "{\"event_type\":\"tool_call\",\"sequence\":0}",
   "timestamp": "2025-01-15T10:00:00Z"

@@ -1,0 +1,11 @@
+{
+  "description": "Verifying a valid signature against a public key other than the signer's returns failure, proving the signature also binds signer identity per ADR-0002.",
+  "citation": "adrs/0002-signature-algorithm.md §Consequences (signer-binding via key-history)",
+  "algorithm": "ed25519",
+  "signer_public_key": "<32-byte signer public key, hex-encoded>",
+  "imposter_public_key": "<32-byte unrelated public key, hex-encoded>",
+  "signature_hex": "<valid signature produced by signer's private key>",
+  "expected_outcome_with_signer_key": "verification_succeeds",
+  "expected_outcome_with_imposter_key": "verification_fails",
+  "expected_failure_reason": "signature_does_not_verify_against_provided_key"
+}

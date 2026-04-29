@@ -1,0 +1,12 @@
+{
+  "description": "A bundle containing multiple receipts serializes, canonicalizes, and re-verifies losslessly, proving bundle composition is reversible across pack/unpack.",
+  "citation": "schemas/bundle.schema.json; spec/model.md (bundle round-trip)",
+  "bundle_input_receipts": [
+    {"sequence": 0, "prev_hash": "genesis", "event_type": "tool_call"},
+    {"sequence": 1, "prev_hash": "sha256:<hash-of-0>", "event_type": "model_inference"},
+    {"sequence": 2, "prev_hash": "sha256:<hash-of-1>", "event_type": "artifact_write"}
+  ],
+  "expected_invariant": "unpack(pack(receipts)) == receipts (byte-identical canonical form per receipt)",
+  "expected_outcome": "round_trip_succeeds",
+  "expected_failure_reason_if_mismatch": "round_trip_diverged_at_canonical_byte_compare"
+}

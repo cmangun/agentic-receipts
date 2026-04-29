@@ -1,0 +1,19 @@
+{
+  "description": "A bundle's metadata signature verifies against the publishing operator's key, binding the bundle's manifest to its publisher so consumers know who produced it.",
+  "citation": "schemas/bundle.schema.json; adrs/0002-signature-algorithm.md §Decision (Ed25519 signing)",
+  "bundle_manifest": {
+    "bundle_id": "33333333-3333-4333-8333-333333333333",
+    "version": "0.1.0",
+    "created_at": "2025-01-15T10:00:00Z",
+    "trace_file": "trace.jsonl",
+    "receipts_file": "receipts.jsonl",
+    "event_count": 3
+  },
+  "manifest_signature": {
+    "algorithm": "ed25519",
+    "public_key": "<publisher's 32-byte ed25519 public key, hex-encoded>",
+    "value": "<64-byte ed25519 signature over canonical(manifest), hex-encoded>"
+  },
+  "expected_outcome": "verification_succeeds",
+  "expected_failure_reason_if_invalid": "manifest_signature_does_not_verify_under_publisher_key"
+}

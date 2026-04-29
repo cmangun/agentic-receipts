@@ -1,0 +1,9 @@
+{
+  "description": "Signing the same message twice with the same key yields byte-identical signatures, proving Ed25519's deterministic-signature property per ADR-0002 (RFC 8032).",
+  "citation": "adrs/0002-signature-algorithm.md §Decision (Ed25519 deterministic signing per RFC 8032 §5.1.6)",
+  "algorithm": "ed25519",
+  "private_key_hex": "<32-byte ed25519 private key, hex-encoded>",
+  "message_hex": "<canonical receipt hash, hex-encoded>",
+  "expected_invariant": "sign(key, msg) == sign(key, msg)",
+  "note": "Two independent calls to sign() with identical key+message MUST produce identical 64-byte signatures. This is what distinguishes Ed25519 from ECDSA, which would emit different valid signatures across runs."
+}

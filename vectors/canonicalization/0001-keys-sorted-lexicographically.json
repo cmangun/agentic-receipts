@@ -1,5 +1,6 @@
 {
-  "description": "Keys sorted lexicographically",
+  "description": "Top-level object keys serialize in lexicographic order, proving JCS RFC 8785 key-sorting at the root level per ADR-0004.",
+  "citation": "adrs/0004-json-canonicalization.md §Decision (JCS RFC 8785 key sorting)",
   "input": {
     "zebra": 1,
     "apple": 2,

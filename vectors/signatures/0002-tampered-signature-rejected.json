@@ -1,0 +1,9 @@
+{
+  "description": "Flipping any byte of a valid signature causes Ed25519 verification to reject, proving the signature binds receipt content per ADR-0002.",
+  "citation": "adrs/0002-signature-algorithm.md §Consequences (signature integrity)",
+  "algorithm": "ed25519",
+  "valid_signature_hex": "<64-byte ed25519 signature, hex-encoded>",
+  "tampered_signature_hex": "<same signature with one byte flipped>",
+  "expected_outcome": "verification_fails",
+  "expected_failure_reason": "signature_invalid_for_message"
+}
